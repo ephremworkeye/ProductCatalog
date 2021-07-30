@@ -11,4 +11,4 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Product)
 class productAdmin(admin.ModelAdmin):
     list_display = ['category','name', 'slug', 'price', 'image', 'created_at']
-    prepopulated_fields = {'slug', ('name',)}
+    prepopulated_fields = {'slug': ('name',)}
