@@ -8,5 +8,5 @@ class CategoryForm(forms.ModelForm):
 
 class ProductForm(forms.ModelForm):
     class Meta:
-        models = Product
+        model = Product
         fields = '__all__'

@@ -17,4 +17,17 @@ class CategoryFormSuccessView(View):
         return HttpResponse('Category record saved successfully')
 
     
-    
+
+class ProductRecordFormView(FormView):
+    template_name = 'product_cat/product_form.html'
+    form_class = ProductForm
+    success_url = '/product_cat/product_success'
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+        
+
+class ProductFormSuccessView(View):
+    def get(self, request, *args, **kwargs):
+        return HttpResponse('product record saved successfully')
