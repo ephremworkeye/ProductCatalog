@@ -59,4 +59,23 @@ class ProductUpdateView(UpdateView):
     fields = '__all__'
     template_name = 'product_cat/product_form.html'
     success_url = '/product_cat/product_success'
+
+class CategoryDeleteView(DeleteView):
+    model = Category
+    template_name = 'product_cat/category_delete_form.html'
+    success_url = '/product_cat/delete_category'
+
+
+class CategoryDeleteSuccess(View):
+    def get(self, request, *args, **kwargs):
+        return HttpResponse('Category item is deleted successfully')
+
+
+class ProductDeleteView(DeleteView):
+    model = Product
+    template_name = 'product_cat/product_delete_form.html'
+    success_url = '/product_cat/delete_product'
     
+class ProductDeleteSuccess(View):
+    def get(self, request, *args, **kwargs):
+        return HttpResponse('Product item is deleted successfully')
