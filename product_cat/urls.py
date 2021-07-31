@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import CategoryFormSuccessView, CategoryRecordFormView,\
     ProductRecordFormView, ProductFormSuccessView, CategoryCreateView,\
-        ProductCreateView
+        ProductCreateView, CategoryUpdateView, ProductUpdateView
 
 urlpatterns = [
     path('new_category', CategoryRecordFormView.as_view(), name='category_add'),
@@ -10,4 +10,6 @@ urlpatterns = [
     path('product_cat/product_success', ProductFormSuccessView.as_view(), name='product_success'),
     path('create_category', CategoryCreateView.as_view(), name='create_category'),
     path('create_product', ProductCreateView.as_view(), name='create_product'),
+    path('update_category/<int:pk>', CategoryUpdateView.as_view(), name='update_category'),
+    path('update_product/<int:pk>', ProductUpdateView.as_view(), name='update_product')
 ]

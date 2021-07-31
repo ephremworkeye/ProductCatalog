@@ -46,6 +46,17 @@ class ProductCreateView(CreateView):
     fields = '__all__'
     template_name = 'product_cat/product_form.html'
     success_url = '/product_cat/product_success'
-# class CategoryUpdateView(UpdateView):
-#     model = Category
-#     fields = ['name', 'slug']
+
+
+class CategoryUpdateView(UpdateView):
+    model = Category
+    fields = ['name', 'slug']
+    template_name = 'product_cat/category_form.html'
+    success_url = '/product_cat/cat_success'
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    fields = '__all__'
+    template_name = 'product_cat/product_form.html'
+    success_url = '/product_cat/product_success'
+    
