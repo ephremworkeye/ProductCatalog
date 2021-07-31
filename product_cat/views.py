@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.views.generic import DetailView, ListView
 from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteView 
 from django.views import View
 from .forms import CategoryForm, ProductForm
@@ -75,7 +76,21 @@ class ProductDeleteView(DeleteView):
     model = Product
     template_name = 'product_cat/product_delete_form.html'
     success_url = '/product_cat/delete_product'
-    
+
 class ProductDeleteSuccess(View):
     def get(self, request, *args, **kwargs):
         return HttpResponse('Product item is deleted successfully')
+
+
+class CategoryDetailView(DetailView):
+    model = Category
+    template_name = 'product_cat/category_detail.html'
+
+
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'product_cat/product_detail.html'
+
+class CategoryList(ListView):
+    model = Category
+    template_name = 'product_cat/category_detail.html'

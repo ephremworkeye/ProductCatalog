@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Product detail{% endblock %}
+
+{% block content %}
+<h1>Product detail view </h1>
+<p>{{ object.name }}</p>
+<p>{{ object.slug }}</p>
+<p>{{ object.price }}</p>
+<p>{{ object.category }}</p>
+<p>{{ object.created_at }}</p>
+
+{% endblock %}
